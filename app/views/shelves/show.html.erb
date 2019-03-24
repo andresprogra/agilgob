@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1>Shelf <span class="btn btn-xs btn-info"><%= link_to "Show books", shelf_books_path(@shelf)%></span></h1>
+  <p>
+    <strong>Pasillo:</strong>
+    <%= @shelf.pasillo %>
+  </p>
 
-<p>
-  <strong>Pasillo:</strong>
-  <%= @shelf.pasillo %>
-</p>
+  <p>
+    <strong>Levels:</strong>
+    <%= @shelf.levels %>
+  </p>
 
-<p>
-  <strong>Levels:</strong>
-  <%= @shelf.levels %>
-</p>
-
-<%= link_to 'Edit', edit_shelf_path(@shelf) %> |
-<%= link_to 'Back', shelves_path %>
+  <%= link_to 'Edit', edit_shelf_path(@shelf) %> |
+  <%= link_to 'Back', shelves_path %>
+</div>

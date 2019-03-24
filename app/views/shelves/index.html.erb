@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Shelves</h1>
+  <h1>Shelves</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Pasillo</th>
-      <th>Levels</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shelves.each do |shelf| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= shelf.pasillo %></td>
-        <td><%= shelf.levels %></td>
-        <td><%= link_to 'Show', shelf %></td>
-        <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
-        <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Pasillo</th>
+        <th>Levels</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @shelves.each do |shelf| %>
+        <tr>
+          <td><%= shelf.pasillo %></td>
+          <td><%= shelf.levels %></td>
+          <td><%= link_to 'Show', shelf %></td>
+          <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
+          <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Shelf', new_shelf_path %>
+  <br>
+
+  <%= link_to 'New Shelf', new_shelf_path %>
+</div>

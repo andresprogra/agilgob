@@ -13,25 +13,25 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :nacionality %>
-    <%= form.text_field :nacionality %>
+    <%= form.text_field :nacionality, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :review %>
-    <%= form.text_area :review %>
+    <%= form.text_area :review, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save", class: "btn btn-xs btn-success" %>
   </div>
 <% end %>

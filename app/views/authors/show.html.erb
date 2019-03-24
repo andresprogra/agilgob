@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1>Author <span class="btn btn-xs btn-info"><%= link_to "Show books", author_books_path(@author) %></span></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @author.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @author.name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @author.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @author.last_name %>
+  </p>
 
-<p>
-  <strong>Nacionality:</strong>
-  <%= @author.nacionality %>
-</p>
+  <p>
+    <strong>Nacionality:</strong>
+    <%= @author.nacionality %>
+  </p>
 
-<p>
-  <strong>Review:</strong>
-  <%= @author.review %>
-</p>
+  <p>
+    <strong>Review:</strong>
+    <%= @author.review %>
+  </p>
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+  <%= link_to 'Edit', edit_author_path(@author) %> |
+  <%= link_to 'Back', authors_path %>
+</div>

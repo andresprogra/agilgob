@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :editorial %>
-    <%= form.text_field :editorial %>
+    <%= form.text_field :editorial, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :year_edition %>
-    <%= form.text_field :year_edition %>
+    <%= form.text_field :year_edition, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :isbn %>
-    <%= form.text_field :isbn %>
+    <%= form.text_field :isbn, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :author_id %>
-    <%= form.text_field :author_id %>
+    <%= select_tag "book[author_id]", options_from_collection_for_select(@authors, "id", "name"), class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :shelf_id %>
-    <%= form.text_field :shelf_id %>
+    <%= select_tag "book[shelf_id]", options_from_collection_for_select(@shelves, "id", "pasillo"), class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :num_edition %>
-    <%= form.text_field :num_edition %>
+    <%= form.text_field :num_edition, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save", class: "btn btn-xs btn-success" %>
   </div>
 <% end %>

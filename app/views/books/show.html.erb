@@ -1,39 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <h1><%= @book.title %></h1>
 
-<p>
-  <strong>Editorial:</strong>
-  <%= @book.editorial %>
-</p>
+  <p>
+    <strong>Editorial:</strong>
+    <%= @book.editorial %>
+  </p>
 
-<p>
-  <strong>Year edition:</strong>
-  <%= @book.year_edition %>
-</p>
+  <p>
+    <strong>Year edition:</strong>
+    <%= @book.year_edition %>
+  </p>
 
-<p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
-</p>
+  <p>
+    <strong>Isbn:</strong>
+    <%= @book.isbn %>
+  </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+  <p>
+    <strong>Author:</strong>
+    <%= @book.author.name %>
+    <%= link_to "Show author", author_path(@book.author) %>
+    <%= link_to "Show more books by #{@book.author.name}", author_books_path(@book.author)%>
+  </p>
 
-<p>
-  <strong>Shelf:</strong>
-  <%= @book.shelf %>
-</p>
+  <p>
+    <strong>Shelf:</strong>
+    <%= @book.shelf.pasillo %>
+    <%= link_to "Show shelf", shelf_path(@book.shelf) %>
+    <%= link_to "Show more books", shelf_books_path(@book.shelf)%>
+  </p>
 
-<p>
-  <strong>Num edition:</strong>
-  <%= @book.num_edition %>
-</p>
+  <p>
+    <strong>Num edition:</strong>
+    <%= @book.num_edition %>
+  </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
+</div>

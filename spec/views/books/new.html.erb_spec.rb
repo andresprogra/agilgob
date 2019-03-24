@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "books/new", type: :view do
   before(:each) do
+    create(:shelf)
+    create(:author)
+    @authors = Author.all
+    @shelves = Shelf.all
     assign(:book, Book.new(
       :title => "MyString",
       :editorial => "MyString",
@@ -26,9 +30,9 @@ RSpec.describe "books/new", type: :view do
 
       assert_select "input[name=?]", "book[isbn]"
 
-      assert_select "input[name=?]", "book[author_id]"
+      assert_select "select[name=?]", "book[author_id]"
 
-      assert_select "input[name=?]", "book[shelf_id]"
+      assert_select "select[name=?]", "book[shelf_id]"
 
       assert_select "input[name=?]", "book[num_edition]"
     end

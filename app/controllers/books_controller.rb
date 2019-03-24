@@ -4,7 +4,24 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @title = "Books"
     @books = Book.all
+  end
+  
+  # GET /authors/:author_id/books
+  def list_by_author
+    author = Author.find(params[:author_id])
+    @title = "Books - By #{author.name}"
+    @books = Book.where(author_id: params[:author_id])
+    render :index
+  end
+
+  # GET /authors/:shelf_id/books
+  def list_by_shelves
+    shelf = Shelf.find(params[:shelf_id])
+    @title = "Books - (ID #{shelf.id})/#{shelf.pasillo}"
+    @books = Book.where(shelf_id: params[:shelf_id])
+    render :index
   end
 
   # GET /books/1
@@ -15,15 +32,21 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @shelves = Shelf.all
+    @authors = Author.all
   end
 
   # GET /books/1/edit
   def edit
+    @shelves = Shelf.all
+    @authors = Author.all
   end
 
   # POST /books
   # POST /books.json
   def create
+    @shelves = Shelf.all
+    @authors = Author.all
     @book = Book.new(book_params)
 
     respond_to do |format|
